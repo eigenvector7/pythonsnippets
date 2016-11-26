@@ -14,12 +14,12 @@ minuteL = list()
 
 # Compare time difference between deque vs list operations
 #TODO - profile using CPU time
-numIterations = 1000000
+numIterations = 100000
 
 starttime = time.time()
 for i in range(numIterations):
 #    idx = random.randrange(0,numIterations)
-    minuteL.append(i)
+    minuteL.insert(0,i)
 lTimeDelta = time.time()-starttime
 print("List time {} ".format(lTimeDelta))
 
@@ -28,8 +28,9 @@ for i in range(numIterations):
 #    idx = random.randrange(0,numIterations)
     minuteQ.appendleft(i)
 qTimeDelta = time.time()-starttime
-
 print("Q time {} ".format(qTimeDelta))
+
+print("Insert left in dequeue is {} times faster".format(round(lTimeDelta/qTimeDelta)))
 
 
 
