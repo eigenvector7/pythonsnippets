@@ -1,4 +1,8 @@
-#! /usr/bin/env python3
+#!/usr/bin/env python3
+
+"""This module retrieves a record of firstname and lastname given a recordID. It's just an example blurb
+It supplies one function
+"""
 
 import sys
 import re
@@ -40,6 +44,8 @@ def retrieveecord(stuId):
     return clientsD.setdefault(stuId, (fn, ln))
 
 if __name__ == "__main__":
+
+    print(sys.argv)
     print("Please enter the studentID")
     mystuId = input()
     while (mystuId):
